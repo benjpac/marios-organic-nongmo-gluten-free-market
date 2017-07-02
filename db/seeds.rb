@@ -11,12 +11,12 @@ Review.destroy_all
 
 50.times do |index|
   newProduct = Product.create!(name: Faker::Food.ingredient,
-                               cost: Faker::Number.between(25, 2000),
+                               cost: Faker::Number.between(1, 20),
                                country: Faker::GameOfThrones.city)
   10.times do |index|
     Review.create!(author: Faker::LordOfTheRings.character,
                    content_body: Faker::Hipster.paragraph(4, true, 4),
-                   rating: Faker::Number.between(1, 100),
+                   rating: Faker::Number.between(1, 5),
                    product_id: newProduct.id)
   end
 end
