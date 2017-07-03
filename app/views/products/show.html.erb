@@ -7,7 +7,7 @@
 
 
 <% @product.reviews.each do |review| %>
-<p><strong><%= review.rating %> stars</strong></p>
-<p><%= review.author %> on <%= review.created_at %>
-<p><%= review.content_body %></p>
+  <p><strong><%= review.rating %> stars</strong></p>
+  <p><%= review.author %> on <%= review.created_at %>
+  <p><%= review.content_body %></p>
 <% end %>
