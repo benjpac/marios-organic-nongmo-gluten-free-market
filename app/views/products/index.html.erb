@@ -1,7 +1,24 @@
-<h1>Products</h1>
+<h1>Mario's Organic Non-GMO Gluten-Free Products</h1>
 
-<p><%= link_to 'New Product', new_product_path %></p>
+<%= link_to 'New Product', new_product_path, class: 'btn btn-success' %>
+<br><br>
 
+<h3>Most Reviewed Product</h3>
+<% @most_reviewed.each do |product| %>
+<p><%= link_to product.name, product_path(product) %></p>
+<% end %>
+<hr>
+<h3>Three Most Recently Reviewed Products</h3>
+<% @three_most_recent.each do |product| %>
+  <p><%= link_to product.name, product_path(product) %></p>
+<% end %>
+<hr>
+<h3>Made in the USA</h3>
+<% @made_in_usa.each do |product| %>
+<p><%= link_to product.name, product_path(product) %></p>
+<% end %>
+<hr>
+<h3>All Products</h3>
 <% @products.each do |product| %>
   <p><%= link_to product.name, product_path(product) %></p>
 <% end %>

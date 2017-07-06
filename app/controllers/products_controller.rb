@@ -2,11 +2,15 @@ class ProductsController < ApplicationController
   
   def index
     @products = Product.all
+    @most_reviewed = Product.most_reviewed
+    @three_most_recent = Product.three_most_recent
+    @made_in_usa = Product.made_in_usa
   end
 
   def show
     @product = Product.find(params[:id])
     @reviews = @product.reviews
+    @review = @product.reviews.new
   end
 
   def new
@@ -17,6 +21,20 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     if @product.save
       redirect_to products_path, notice: 'Product added'
+    else
+      render :new
+    end
+  end
+
+  # def new_review
+  #   @product = Product.find(params[:id])
+  #   @review = @product.reviews.new
+  # end
+
+  def create_revieww
+    @product = Product.find(params[:id])
+    if @review.save
+      redirect_to product_path(@product), notice: 'Review added'
     else
       render :new
     end

@@ -1,8 +1,8 @@
 <%= render 'layouts/errors', :object => @product %>
 
-<% form_for @product do |f| %>
-<div class="form-group">
-  <%= f.label :name %>
+<%= bootstrap_form_for @product do |f| %>
   <%= f.text_field :name %>
-</div>
+  <%= f.text_field :country %>
+  <%= f.text_field :cost %>
+  <%= f.submit class: 'btn btn-success' %>
 <% end %>
