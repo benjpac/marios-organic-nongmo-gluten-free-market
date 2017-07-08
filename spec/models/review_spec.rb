@@ -10,3 +10,9 @@ end
 # RSpec.describe Review, type: :model do
 #   pending "add some examples to (or delete) #{__FILE__}"
 # end
+# describe Review do
+#   it 'validates review data' do
+#     review = FactoryGirl.create(:review)
+
+#   end
+# end
